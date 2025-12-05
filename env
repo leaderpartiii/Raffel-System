@@ -1,0 +1,37 @@
+# Environment Configuration for Raffle Backend
+
+# Blockchain RPC & Network
+RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+# или для Polygon Mumbai
+# RPC_URL=https://rpc-mumbai.maticvigil.com
+
+CHAIN_ID=11155111
+
+# Contract Configuration
+RAFFLE_CONTRACT_ADDRESS=0x...your_contract_address
+USDT_CONTRACT_ADDRESS=0x...usdt_token_address
+
+# Chainlink VRF Configuration (если нужен для тестов)
+VRF_COORDINATOR_ADDRESS=0x...
+SUBSCRIPTION_ID=...
+
+# Wallet Configuration
+ADMIN_PRIVATE_KEY=0x...your_admin_key
+ADMIN_PUBLIC_ADDRESS=0x...your_admin_address
+
+# Database
+DATABASE_URL=sqlite:///raffle.db
+# Для продакшена используй PostgreSQL:
+# DATABASE_URL=postgresql://user:password@localhost:5432/raffle_db
+
+# Security
+ENCRYPTION_KEY=your_secret_key_32_chars_long!!!
+SECRET_KEY=your_jwt_secret_key_here
+
+# API Configuration
+API_HOST=0.0.0.0
+API_PORT=8000
+
+# Logging
+LOG_LEVEL=INFO
+LOG_FILE=logs/raffle.log
