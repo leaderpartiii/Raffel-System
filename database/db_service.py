@@ -1,5 +1,6 @@
 import logging
 from database.models import db_manager, User, Raffle, Transaction
+from sqlalchemy import func
 
 logger = logging.getLogger(__name__)
 
