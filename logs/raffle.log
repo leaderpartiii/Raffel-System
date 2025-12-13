@@ -1707,3 +1707,6 @@
 2025-12-13 23:31:02,904 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
 2025-12-13 23:31:12,918 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
 2025-12-13 23:31:22,931 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
+2025-12-13 23:31:32,947 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
+2025-12-13 23:31:42,960 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
+2025-12-13 23:31:52,972 - transaction.raffle_processor - INFO - Checking for deposits. Block range: 0 - 2
