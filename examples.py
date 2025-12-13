@@ -4,9 +4,9 @@
 
 import logging
 from wallet.wallet_manager import WalletManager
-from database.db_service import UserService, RaffleService
+from database.db_service import UserService
 from transaction.raffle_processor import RaffleProcessor
-from contracts.contract_manager import RaffleContractManager
+from contracts.raffle_service import RaffleService
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -125,7 +125,7 @@ def example_enter_raffle():
     print("\n=== ПРИМЕР 4: Вход в лотерею ===\n")
     
     processor = RaffleProcessor()
-    contract = RaffleContractManager()
+    contract = RaffleService()
     
     tg_id = "123456789"
     user = UserService.get_user_by_tg_id(tg_id)
