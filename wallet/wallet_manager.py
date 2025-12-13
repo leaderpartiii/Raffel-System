@@ -13,11 +13,9 @@ class WalletManager:
         if isinstance(self.encryption_key, str):
             self.encryption_key = self.encryption_key.encode()
         
-        # Убедимся, что ключ имеет правильный размер для Fernet (32 байта в base64)
         if len(self.encryption_key) != 32:
             raise ValueError("Encryption key must be exactly 32 characters long")
         
-        # Кодируем в base64 для Fernet
         import base64
         encoded_key = base64.urlsafe_b64encode(self.encryption_key)
         self.cipher = Fernet(encoded_key)

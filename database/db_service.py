@@ -226,9 +226,7 @@ class TransactionService:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
-    # Инициализируем БД
     db_manager.create_all_tables()
     
-    # Пример использования
     user = UserService.create_user("123456789", "0x1234567890123456789012345678901234567890", "encrypted_key_here")
     print(f"Created user: {user}")

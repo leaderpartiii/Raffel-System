@@ -15,6 +15,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+async def consume_generator(gen, name="Listener"):
+    """Вспомогательная функция для запуска генератора в фоне"""
+    try:
+        async for event in gen:
+            logger.info(f"[{name}] Received event: {event}")
+            # Тут можно добавить логику обработки события, если она нужна на уровне main
+            # Например, отправку в очередь сообщений или вебхук
+    except Exception as e:
+        logger.error(f"[{name}] Error: {e}")
 
 async def run_listeners():
     """Запустить все слушатели событий"""
@@ -25,8 +34,8 @@ async def run_listeners():
     
     # Запускаем слушатели параллельно
     tasks = [
-        asyncio.create_task(event_listener.listen_for_winner()),
-        asyncio.create_task(event_listener.listen_for_entries()),
+        asyncio.create_task(consume_generator(event_listener.listen_for_winner())),
+        asyncio.create_task(consume_generator(event_listener.listen_for_entries())),
         asyncio.create_task(deposit_listener.listen_for_deposits())
     ]
     

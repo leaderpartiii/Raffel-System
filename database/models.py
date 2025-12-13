@@ -84,7 +84,6 @@ class DatabaseManager:
         logger.info(f"Database initialized: {config.DATABASE_URL}")
     
     def create_all_tables(self):
-        """Создать все таблицы"""
         try:
             Base.metadata.create_all(self.engine)
             logger.info("All tables created successfully")
@@ -93,11 +92,9 @@ class DatabaseManager:
             raise
     
     def get_session(self):
-        """Получить новую сессию"""
         return self.Session()
     
     def close_session(self, session):
-        """Закрыть сессию"""
         if session:
             session.close()
 
